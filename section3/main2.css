@@ -1,0 +1,23 @@
+body {
+    background-color: black;
+    color: white;
+}
+.circle {
+    height: 100px;
+    width: 100px;
+    background: red;
+    border-radius: 50%;
+
+}
+.square {
+    height: 100px;
+    width: 100px;
+    background: red;
+
+}
+.rectangle {
+    height: 100px;
+    width: 200px;
+    background: red;
+
+}
