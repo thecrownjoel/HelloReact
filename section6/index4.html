@@ -19,17 +19,16 @@
 
     <script type="text/babel">
     
-       
-        var Color = function(props) {
-            var colorStyle = {
-                height: 50,
-                width: 150,
-                backgroundColor: props.color
-            }
-            return (
-                <h1 style={colorStyle}>{props.name}</h1>
-            )
-        }
+      var Color = function(props) {
+          var colorItems = props.colors.map(function(color) {
+              var colorStyle = {
+                  height: 50,
+                  width: 150,
+                  backgroundColor: color.color
+              }
+              return <div style={colorStyle} key={color.id}>{color.name}</div>
+          })
+      }
 
         var colors = [
         {id: 1, color: "red", name: "red"},
@@ -44,15 +43,7 @@
 
         ReactDOM.render(
             <div>
-            <Color name="red" color="red" />
-            <Color name="orange" color="orange" />
-            <Color name="yellow" color="yellow" />
-            <Color name="green" color="green" />
-            <Color name="blue" color="blue" />
-            <Color name="indigo" color="indigo" />
-            <Color name="violet" color="violet" />
-            
-
+            <Color colors={colors}/>
             </div>,
             document.getElementById('app')
             )
