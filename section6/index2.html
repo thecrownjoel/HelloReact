@@ -22,8 +22,12 @@
         function FamilyList(props) {
             // assign props.siblings to siblings variable to clean up code
             var siblings = props.siblings;
+           // Use filter method to only show female siblings
+          
             // use map method on siblings array to create a new array full of JSX
-            var siblingsListItem = siblings.map(function(person) {
+            var siblingsListItem = siblings.filter(function(person){
+                return person.female;
+            }).map(function(person) {
                 return <div key={person.id}>{person.name}</div>
             })
             return(
@@ -31,7 +35,7 @@
             );
         }
 
-function FamilyList(props) {
+function ddddFamilyList(props) {
     return(
         <div>{props.siblings.map(function(person) {
                 return <div key={person.id}>{person.name}</div>
