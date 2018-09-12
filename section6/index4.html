@@ -17,18 +17,27 @@
 
     <div id="app">React not rendered</div>
 
-    <script type="text/babel">
     
-      var Color = function(props) {
-          var colorItems = props.colors.map(function(color) {
-              var colorStyle = {
-                  height: 50,
-                  width: 150,
-                  backgroundColor: color.color
-              }
-              return <div style={colorStyle} key={color.id}>{color.name}</div>
-          })
-      }
+
+    <script type="text/babel">
+
+        var Color = function(props) {
+            var colorItems = props.colors.map(function(color) {
+                var colorStyle = {
+                    marginBottom: 24,
+                    height: 50,
+                    width: 150,
+                    backgroundColor: color.color
+                };
+                return <div style={colorStyle} key={color.id}>{color.name}</div>
+            });
+            return (
+                <h1>{colorItems}</h1>
+            );
+        }
+ 
+    
+    
 
         var colors = [
         {id: 1, color: "red", name: "red"},
