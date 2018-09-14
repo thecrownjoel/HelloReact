@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+    <!-- BABEL LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <!-- CSS File-->
+    <title>Styling Components</title>
+</head>
+<body>
+
+    <div id="app">React not rendered</div>
+
+    <!-- var Color = function(props) {
+            
+        var colorItems = props.colors.map(function(color) {
+            var colorStyle = {
+                backgroundColor: color.color
+            }
+            return <div style={colorStyle} key={color.id}>{color.name}</div>
+        });
+        return (
+            <h1>{colorItems}</h1>
+        );
+    } -->
+
+    <script type="text/babel">
+
+    var People = function(props) {
+        var fullnames = props.names.map(function(name) {
+            var nameStyle = {
+                backgroundColor: name.color,
+                color: "black",
+                width: 700,
+                height: 50,
+                paddingTop: 10,
+                paddingLeft: 20,
+                fontFamily: "arial",
+                fontSize: 40
+            }
+            var myfullname = "My name is " + name.firstname.toUpperCase() + " " + name.lastname.toUpperCase();
+            return <div style={nameStyle} key={name.id}>{myfullname}</div>
+        })
+        return(
+            <h1>{fullnames}</h1>
+        )
+    }
+        
+
+
+        var names = [
+        {id: 1, color: "orange", firstname: "joel", lastname: "kendall"},
+        {id: 2, color: "green", firstname: "lorin", lastname: "kendall"},
+        {id: 3, color: "tomato", firstname: "madison", lastname: "kendall"},
+        {id: 4, color: "cyan", firstname: "ashley", lastname: "martino"},
+        {id: 5, color: "purple", firstname: "gene", lastname: "yraola"},
+        {id: 6, color: "yellow", firstname: "christian", lastname: "schraga"},
+        {id: 7, color: "red", firstname: "jenifer", lastname: "mallory"},
+        ];
+       
+
+        ReactDOM.render(
+            <div>
+            <People names={names}/>
+            </div>,
+            document.getElementById('app')
+            )
+            
+    </script>
+    
+    
+</body>
+</html>
