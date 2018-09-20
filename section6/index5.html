@@ -32,27 +32,22 @@
 
     <script type="text/babel">
 
+  
     var People = function(props) {
-        var fullnames = props.names.map(function(name) {
-            var nameStyle = {
-                backgroundColor: name.color,
-                color: "black",
-                width: 700,
-                height: 50,
-                paddingTop: 10,
-                paddingLeft: 20,
-                fontFamily: "arial",
-                fontSize: 40
+        var peopleItems = props.names.map(function(person) {
+            var peopleStyle = {
+                backgroundColor: person.color,
+                color: "black"
             }
-            var myfullname = "My name is " + name.firstname.toUpperCase() + " " + name.lastname.toUpperCase();
-            return <div style={nameStyle} key={name.id}>{myfullname}</div>
+            return <div key={person.id} style={peopleStyle}>{person.firstname}</div>
         })
-        return(
-            <h1>{fullnames}</h1>
+        return (
+            <h1>{peopleItems}</h1>
         )
     }
-        
 
+
+  
 
         var names = [
         {id: 1, color: "orange", firstname: "joel", lastname: "kendall"},
@@ -61,7 +56,7 @@
         {id: 4, color: "cyan", firstname: "ashley", lastname: "martino"},
         {id: 5, color: "purple", firstname: "gene", lastname: "yraola"},
         {id: 6, color: "yellow", firstname: "christian", lastname: "schraga"},
-        {id: 7, color: "red", firstname: "jenifer", lastname: "mallory"},
+        {id: 7, color: "red", firstname: "josh", lastname: "donaldson"},
         ];
        
 
